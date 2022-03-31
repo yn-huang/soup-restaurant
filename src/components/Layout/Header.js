@@ -1,6 +1,4 @@
-import { useContext } from "react";
 import CartButton from "./CartButton";
-import CartContext from "../../contexts/cart-context";
 
 import classes from "./Header.module.css";
 import soupBannerImage from "../../assets/soup-banner.jpg";

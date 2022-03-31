@@ -2,7 +2,8 @@ import { useState } from "react";
 import Header from "./components/Layout/Header";
 import Menu from "./components/Meals/Menu";
 import Cart from "./components/Cart/Cart";
-import CartProvider from "./contexts/CartProvider";
+import { Provider } from "react-redux";
+import store from "./store/store";
 
 function App() {
   const [openCart, setOpenCart] = useState(false);
@@ -16,13 +17,13 @@ function App() {
   };
 
   return (
-    <CartProvider>
+    <Provider store={store}>
       {openCart && <Cart onCloseCart={closeCartHandler} />}
       <Header onOpenCart={openCartHandler} />
       <main>
         <Menu />
       </main>
-    </CartProvider>
+    </Provider>
   );
 }
 

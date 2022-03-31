@@ -1,15 +1,19 @@
-import { useContext } from "react";
 import MealItemForm from "./MealItemForm";
-import CartContext from "../../../contexts/cart-context";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../../store/store";
 
 import classes from "./MealItem.module.css";
 
 export default function MealItem(props) {
-  const ctx = useContext(CartContext);
+  const dispatch = useDispatch();
   const price = props.price.toFixed(2);
 
   const addToCartHandler = (amount) => {
-    ctx.addItem({ id: props.id, name: props.name, amount, price: props.price });
+    dispatch(
+      cartActions.addItem({
+        item: { id: props.id, name: props.name, amount, price: props.price },
+      })
+    );
   };
 
   return (

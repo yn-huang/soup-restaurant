@@ -1,13 +1,14 @@
-import { useContext } from "react";
+// import { useContext } from "react";
 import CartIcon from "../Cart/CartIcon";
-import CartContext from "../../contexts/cart-context";
+// import CartContext from "../../contexts/cart-context";
+import { useSelector } from "react-redux";
 
 import classes from "./CartButton.module.css";
 
 export default function CartButton(props) {
-  const ctx = useContext(CartContext);
+  const items = useSelector((state) => state.items);
 
-  const cartItemCount = ctx.items.reduce(
+  const cartItemCount = items.reduce(
     (current, item) => current + item.amount,
     0
   );
