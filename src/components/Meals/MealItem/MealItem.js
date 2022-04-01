@@ -11,7 +11,10 @@ export default function MealItem(props) {
   const addToCartHandler = (amount) => {
     dispatch(
       cartActions.addItem({
-        item: { id: props.id, name: props.name, amount, price: props.price },
+        id: props.id,
+        name: props.name,
+        amount,
+        price: props.price,
       })
     );
   };

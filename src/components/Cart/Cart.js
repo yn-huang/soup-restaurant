@@ -12,7 +12,7 @@ export default function Cart(props) {
   const hasItems = items.length > 0;
 
   const addItemHandler = (item) => {
-    dispatch(cartActions.addItem({ item: { ...item, amount: 1 } }));
+    dispatch(cartActions.addItem({ ...item, amount: 1 }));
   };
 
   const removeItemHandler = (id) => {
