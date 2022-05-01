@@ -1,5 +1,5 @@
 # Soup Restaurant
-An e-commerce site for restaurant's online ordering.
+A website model for a fictional restaurant's online ordering.
 
 ## How to Start?
 1. download the repository
